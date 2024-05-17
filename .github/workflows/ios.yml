@@ -23,8 +23,7 @@ jobs:
       - name: Build
         env:
           scheme: ${{ 'default' }}
-          platform: ${{ 'iOS Simulator' }}
-        run: xcodebuild -scheme "$scheme" archive -archivePath build/YourApp.xcarchive
+        run: xcodebuild -scheme Diffusion archive -archivePath build/YourApp.xcarchive
     
       - name: Export .ipa file
         run: xcodebuild -exportArchive -archivePath build/YourApp.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath build
