@@ -1,0 +1,9 @@
+    - name: Install dependencies
+      run: |
+        pod install # If you're using CocoaPods
+    
+    - name: Build and Archive
+      run: xcodebuild -scheme YourScheme archive -archivePath build/YourApp.xcarchive
+    
+    - name: Export .ipa file
+      run: xcodebuild -exportArchive -archivePath build/YourApp.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath build
